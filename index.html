@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>WRATH</title>
+		<meta charset="utf8">
+		<link rel="shortcut icon" href="img/favicon.png" />
+		<link rel="stylesheet" href="less/wrath.css">
+		<script src="bower_components/requirejs/require.js" data-main="js/wrath.js"></script>
+	</head>
+	<body ng-cloak>
+		<header class="jumbotron masthead">
+			<h1>WRATH</h1>
+			<ul>
+				<li>WRATH</li>
+				<li>Razor</li>
+				<li>Assisted</li>
+				<li>Test</li>
+				<li>Harness</li>
+			</ul>
+			<fieldset>
+				<div>
+					<select>
+						<option value="0">DEVA</option>
+						<option value="1">DEVB</option>
+						<option value="2">TEST</option>
+						<option value="3">UAT</option>
+						<option value="4">RC</option>
+						<option value="5">QA</option>
+					</select>
+				</div>
+			    <div>
+			    	<input type="text" placeholder="Username">
+			    </div>
+			    <div>
+			    	<input type="password" placeholder="Password">
+			    </div>
+			  </fieldset>
+		</header>
+		<div ng-controller="runnerController">
+			<ul class="nav nav-pills" id="first">
+				<li ng-class="{ active:  prelude.show }"><a href="" ng-click="prelude.show = !prelude.show">Prelude</a></li>
+				<li ng-class="{ active:  template.show }"><a href="" ng-click="template.show = !template.show">Template</a></li>
+				<li ng-class="{ active:  request.show }"><a href="" ng-click="request.show = !request.show">Request</a></li>
+				<li ng-class="{ active:  response.show }"><a href="" ng-click="response.show = !response.show">Response</a></li>
+				<li class="pull-right"><button ng-click="runRequest()" class="btn btn-primary">Run</button></li>
+				<li class="pull-right"><button ng-click="runTransform()" class="btn">Transform</button></li>
+			</ul>
+			<div class="row-fluid">
+				<div ng-class="getWidthClass()" ng-if="prelude.show">
+					<textarea ui-codemirror="cSharpMirrorOptions" ng-model="prelude.value"></textarea>
+				</div>
+				<div ng-class="getWidthClass()" ng-if="template.show">
+					<textarea ui-codemirror="xmlMirrorOptions" ng-model="template.value"></textarea>
+				</div>
+				<div ng-class="getWidthClass()" ng-if="request.show">
+					<textarea ui-codemirror="xmlMirrorOptions" ng-model="request.value"></textarea>
+				</div>
+				<div ng-class="getWidthClass()" ng-if="response.show">
+					<textarea ui-codemirror="xmlMirrorOptions" ng-model="response.value"></textarea>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

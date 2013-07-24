@@ -1,0 +1,66 @@
+@import "../bower_components/codemirror/lib/codemirror.less";
+@import "../bower_components/codemirror/theme/monokai.less";
+
+@import "../bower_components/bootstrap/less/bootstrap.less";
+@import "../bower_components/bootstrap/less/responsive.less";
+
+body {
+	background-color: #272822;
+}
+.masthead {
+	margin-bottom: 0;
+	color: #fff;
+}
+h1 {
+	font-size: 180px;
+	line-height: 1;
+	letter-spacing: -2px;
+}
+.masthead ul {
+	list-style: none;
+}
+.masthead ul li {
+	display: inline-block;
+}
+.jumbotron {
+	position: relative;
+	padding: 40px 0;
+	color: #fff;
+	text-align: center;
+	text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
+	background-image: url(../img/wrath.png);
+	width: 100%;
+	background-size: cover;
+	-webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+	-moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+	box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+}
+@media (max-width: 767px) {
+  /* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+
+  .jumbotron {
+    padding: 40px 20px;
+    margin-right: -20px;
+    margin-left:  -20px;
+  }
+  h1 {
+    font-size: 90px;
+  }
+  ul.nav {
+    margin-right: -20px;
+    margin-left:  -20px;
+  }
+}
+#test {
+	height: 1000px;
+}
+.nav {
+	padding: 6px;
+	background-color: #fff;
+}
+.span6,.span4,.span3 {
+	.transition(width .2s);
+}
