@@ -21,6 +21,16 @@ require.config({
 require(['angular', 'angular-resource', 'ui-codemirror', 'mustache'], function(angular, angularResource, uiCodemirror, mustache) {
 
 	angular.module('wrathControllers', ['ngResource'])
+		.controller('wrathController', ['$scope', function($scope) {
+			var id = 0;
+			$scope.runners = [id++];
+			$scope.addRunner = function() {
+				$scope.runners.push(id++);
+			};
+			$scope.remove = function(id) {
+				$scope.runners.splice($scope.runners.indexOf(id), 1);
+			};
+		}])
 		.controller('runnerController', ['$scope', '$http', '$resource', function($scope, $http , $resource) {
 
 			$http.defaults.useXDomain = true;

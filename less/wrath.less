@@ -4,12 +4,13 @@
 @import "../bower_components/bootstrap/less/bootstrap.less";
 @import "../bower_components/bootstrap/less/responsive.less";
 
-body {
-	background-color: #272822;
-}
+@linkColor: hsl(0, 100%, 30%);
+@bodyBackground: #272822;
+@textColor: #fff;
+@runnerHeight: 600px;
+
 .masthead {
 	margin-bottom: 0;
-	color: #fff;
 }
 h1 {
 	font-size: 180px;
@@ -31,9 +32,26 @@ h1 {
 	background-image: url(../img/wrath.png);
 	width: 100%;
 	background-size: cover;
-	-webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
-	-moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
-	box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+	.box-shadow(inset 0 3px 7px rgb(0,0,0));
+}
+.nav {
+    margin-bottom: 0px;
+}
+.navigation {
+	padding: 4px 0 4px 0;
+	background-color: #fff;
+}
+.runners {
+	min-height: @runnerHeight;
+}
+.zeroWidth { width: 0; }
+
+.CodeMirror {
+	height: @runnerHeight;
+}
+footer {
+	float: right;
+	padding: 10px;
 }
 @media (max-width: 767px) {
   /* Remove any padding from the body */
@@ -53,22 +71,4 @@ h1 {
     margin-right: -20px;
     margin-left:  -20px;
   }
-}
-#test {
-	height: 1000px;
-}
-.nav {
-	padding: 6px;
-	background-color: #fff;
-}
-.span6,.span4,.span3 {
-	/*.transition(width .2s);*/
-}
-
-.row-fluid {
-	height: 1000px;
-}
-
-.zeroWidth {
-	width: 0;
 }
