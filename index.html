@@ -55,7 +55,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="span4">
+						<div class="span8">
 							<div class="form-inline">
 								<select>
 									<option value="0"></option>
@@ -63,11 +63,9 @@
 									<option value="2">AddContact</option>
 								</select>
 								<button class="btn btn-primary">Load Template</button>
+								<button ng-click="runRequest()" class="pull-right btn btn-primary">Run</button>
+								<button ng-click="runTransform()" class="pull-right btn">Transform</button>
 							</div>
-						</div>
-						<div class="span4">
-							<button ng-click="runRequest()" class="pull-right btn btn-primary">Run</button>
-							<button ng-click="runTransform()" class="pull-right btn">Transform</button>
 						</div>
 					</div>
 					<div class="row-fluid runners">
