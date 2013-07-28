@@ -1,8 +1,6 @@
 require_relative 'Templates/AddContact'
 
-addContactTemplate = AddContact.new
-
-puts addContactTemplate.render({
+puts AddContact.new.render({
 	:contactRef => 123456789,
 	:partRef => 987654321,
 	:ratingNotes => [
