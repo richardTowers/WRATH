@@ -1,5 +1,6 @@
 WRATH
 ===============
 
-WRATH Razor Assisted Test Harness
+WRATH Recursively Acronymed Test Harness
+
 
