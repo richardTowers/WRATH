@@ -1,0 +1,206 @@
+.pure-menu {
+    padding-top: 1em;
+}
+
+.pure-menu ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.pure-menu li a {
+    display: block;
+}
+
+/* Add transition to containers so they can push in and out */
+#layout,
+#menu,
+.pure-menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+a {
+    color: #3b8bba; /* block-background-text-normal */
+    text-decoration: none;
+}
+
+a:visited {
+    color: #265778; /* block-normal-text-normal */
+}
+
+#layout {
+    padding-left: 250px; /* left col width "#menu" */
+    left: 0;
+}
+
+/* --------------------------
+ * Main Navigation Bar Styles
+ * --------------------------
+*/
+
+#menu {
+    margin-left: -250px; /* "#menu" width */
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 250px;
+    bottom: 0;
+    z-index: 1000; /* so the menu or its navicon stays above all content */
+    background: #191818;
+    overflow-y: auto;
+    -webkit-overflow-scroll: touch;
+}
+
+    #menu input {
+        padding: 10px 0 10px 10px;
+        margin: 5px 0 5px 5px;
+        width: 225px;
+        background: #111;
+        color: #ccc;
+    }
+
+    #menu a {
+        color: #999;
+        border: none;
+        white-space: normal;
+        padding: 0.6em 0 0.6em 0.6em;
+    }
+
+    #menu .pure-menu-open {
+        background: transparent;
+        border: 0;
+    }
+
+    #menu .pure-menu ul {
+        border: none;
+        background: transparent;
+    }
+
+    #menu .pure-menu ul {
+        border-top: 1px solid #333;
+    }
+
+        #menu .pure-menu li a:hover,
+        #menu .pure-menu li a:focus {
+            background: #333;
+        }
+
+    .pure-menu-link {
+        display: none; /* show this only on small screens */
+        top: 0;
+        left: 250px; /* "#menu width" */
+        background: #000;
+        background: rgba(0,0,0,0.7);
+        font-size: 10px; /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 2.1em 1.6em;
+    }
+
+        .pure-menu-link:hover,
+        .pure-menu-link:focus {
+            background: #000;
+        }
+
+        .pure-menu-link span {
+            position: relative;
+            display: block;
+        }
+
+        .pure-menu-link span,
+        .pure-menu-link span:before,
+        .pure-menu-link span:after {
+            background-color: #fff;
+            width: 100%;
+            height: .2em;
+            -webkit-transition: all 0.8s;
+               -moz-transition: all 0.8s;
+                -ms-transition: all 0.8s;
+                 -o-transition: all 0.8s;
+                    transition: all 0.8s;
+        }
+
+            .pure-menu-link span:before,
+            .pure-menu-link span:after {
+                position: absolute;
+                margin-top: -.6em;
+                content: " ";
+            }
+
+            .pure-menu-link span:after {
+                margin-top: .6em;
+            }
+
+        .pure-menu-link.active span {
+            background: transparent;
+        }
+
+            .pure-menu-link.active span:before {
+                -webkit-transform: rotate(45deg) translate(.5em, .4em);
+                   -moz-transform: rotate(45deg) translate(.5em, .4em);
+                    -ms-transform: rotate(45deg) translate(.5em, .4em);
+                     -o-transform: rotate(45deg) translate(.5em, .4em);
+                        transform: rotate(45deg) translate(.5em, .4em);
+            }
+
+            .pure-menu-link.active span:after {
+                -webkit-transform: rotate(-45deg) translate(.45em, -.35em);
+                   -moz-transform: rotate(-45deg) translate(.45em, -.35em);
+                    -ms-transform: rotate(-45deg) translate(.45em, -.35em);
+                     -o-transform: rotate(-45deg) translate(.45em, -.35em);
+                        transform: rotate(-45deg) translate(.45em, -.35em);
+            }
+
+    #menu .pure-menu-heading {
+        font-size: 110%;
+        color: #fff;
+    }
+    #menu .pure-menu-heading:hover,
+    #menu .pure-menu-heading:focus {
+        color: #999;
+    }
+
+    #menu .pure-menu-selected {
+        background: #1f8dd6;
+    }
+
+        #menu .pure-menu-selected a {
+            color: #fff;
+        }
+
+        #menu li.pure-menu-selected a:hover,
+        #menu li.pure-menu-selected a:focus {
+            background: none;
+        }
+
+/* Navigation Push Styles */
+#layout {
+    position: relative;
+    padding-left: 0;
+}
+    #layout.active {
+        position: relative;
+        padding-left: 250px;
+    }
+        #layout.active #menu {
+            left: 250px;
+            width: 250px;
+        }
+
+#menu {
+    left: 0;
+}
+
+.pure-menu-link {
+    position: fixed;
+    left: 0;
+    display: block;
+}
+
+#layout.active .pure-menu-link {
+    left: 250px;
+}
