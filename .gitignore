@@ -152,3 +152,5 @@ $RECYCLE.BIN/
 .DS_Store
 
 bower_components
+.vagrant
+node_modules
